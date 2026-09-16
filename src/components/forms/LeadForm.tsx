@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import type { LeadKind } from "@/lib/leads/validation";
+import { ArrowUpRightIcon } from "@/components/layout/Icons";
 
 export function LeadForm({ kind, title, submitLabel, helper, privacy }: { kind: LeadKind; title: string; submitLabel: string; helper: string; privacy: string }) {
   const [started, setStarted] = useState(false);
@@ -32,9 +33,8 @@ export function LeadForm({ kind, title, submitLabel, helper, privacy }: { kind: 
           <span>{privacy}</span>
         </label>
         <input name="kind" type="hidden" value={kind} />
-        <input name="honeypot" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" className="honeypot" />
         {status === "error" ? <p className="form-status form-status-error" role="alert">This registration is not open yet. Please check back soon. Your details were not submitted.</p> : null}
-        <button type="submit" className="button button-ink button-full">{submitLabel}<span aria-hidden="true">↗</span></button>
+        <button type="submit" className="button button-ink button-full">{submitLabel}<ArrowUpRightIcon /></button>
         <p className="form-helper">{helper}</p>
         {started ? <p className="sr-only" aria-live="polite">Form started</p> : null}
       </div>

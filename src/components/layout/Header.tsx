@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { siteContent } from "@/content/site";
+import { MenuIcon, StarIcon } from "./Icons";
 
 function Wordmark() {
   return (
     <Link href="/" className="wordmark" aria-label="Northstar Sales Lab home">
-      <span className="wordmark-mark" aria-hidden="true">✦</span>
+      <span className="wordmark-mark"><StarIcon /></span>
       <span>{siteContent.brand.name}</span>
     </Link>
   );
@@ -22,7 +23,7 @@ export function Header() {
           <Link href="/follow-up-frameworks" className="button button-small button-outline">Get the field guide</Link>
         </nav>
         <details className="mobile-nav">
-          <summary aria-label="Open navigation"><span aria-hidden="true">Menu</span><span className="menu-icon" aria-hidden="true">☰</span></summary>
+          <summary aria-label="Open navigation"><span aria-hidden="true">Menu</span><MenuIcon /></summary>
           <nav aria-label="Mobile navigation">
             {siteContent.navigation.map((item) => (
               <a key={item.href} href={item.href} className="mobile-nav-link">{item.label}</a>
