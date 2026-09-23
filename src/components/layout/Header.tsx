@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { siteContent } from "@/content/site";
-import { MenuIcon, StarIcon } from "./Icons";
+import { StarIcon } from "./Icons";
+import { MobileNav } from "./MobileNav";
 
 function Wordmark() {
   return (
@@ -22,15 +23,7 @@ export function Header() {
           ))}
           <Link href="/follow-up-frameworks" className="button button-small button-outline">Get the field guide</Link>
         </nav>
-        <details className="mobile-nav">
-          <summary aria-label="Open navigation"><span aria-hidden="true">Menu</span><MenuIcon /></summary>
-          <nav aria-label="Mobile navigation">
-            {siteContent.navigation.map((item) => (
-              <a key={item.href} href={item.href} className="mobile-nav-link">{item.label}</a>
-            ))}
-            <Link href="/follow-up-frameworks" className="button button-small button-ink">Get the field guide</Link>
-          </nav>
-        </details>
+        <MobileNav />
       </div>
     </header>
   );
