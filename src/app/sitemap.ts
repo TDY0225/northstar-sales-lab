@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
+import { getSiteOrigin } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://northstar-sales-lab.example";
+  const base = getSiteOrigin();
   return ["/", "/follow-up-frameworks", "/privacy"].map((path) => ({ url: `${base}${path}`, changeFrequency: "monthly", priority: path === "/" ? 1 : 0.7 }));
 }
