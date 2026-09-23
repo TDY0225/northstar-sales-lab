@@ -17,7 +17,7 @@ export const leadMagnetContent = {
   form: {
     title: "Send me the field guide",
     submitLabel: "Get the guide",
-    helper: "One practical email with the download details. Unsubscribe anytime.",
+    helper: "In a live version, one practical email would deliver the download details. Unsubscribe anytime.",
     privacy: "We only use your email to deliver this guide and relevant Northstar updates.",
   },
   faq: {
